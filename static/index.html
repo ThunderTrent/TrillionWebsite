@@ -1,0 +1,167 @@
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Candal" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  background: #000; 
+}
+
+.stopfade { 
+   opacity: .5;
+}
+
+#polina { 
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  width: 33%;
+  margin:2rem;
+  float: right;
+  font-size: 1.2rem;
+}
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+#polina button { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.23);
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: .3s background;
+}
+#polina button:hover { 
+   background: rgba(0,0,0,0.5);
+}
+
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  transition: .6s background; 
+}
+a:hover{
+  background:rgba(0,0,0,0.9);
+}
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(//demosthenes.info/assets/images/polina.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
+span{
+font-family: 'Candal', sans-serif;
+font-weight:700;
+}
+#menu{
+margin-top:50px;
+}
+#menu > span{
+margin-top:-10px;
+margin-left:100px;
+font-size:20px;
+}
+
+canvas{
+position:fixed !important;
+z-index:1;
+}
+</style>
+</head>
+<body>
+
+<!-- required libraries -->
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/three.min.js"></script>
+ 
+<!-- Valiant360 plugin -->
+<script src="js/jquery.valiant360.min.js"></script>
+ 
+<!-- Valiant360 styles -->
+<link rel="stylesheet" type="text/css" href="css/valiant360.css">
+
+<!-- Valiant360 player container -->
+
+
+
+<!--
+<video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop>
+  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+<!--<source src="http://video.webmfiles.org/big-buck-bunny_trailer.webm" type="video/webm">
+<source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+</video>
+-->
+<div class="valiant" data-video-src="warcraft.mp4" style="height:100%"></div>
+<div id="polina" style="position:absolute;top:0px;height:100px;width:100%;background-color:rgba(49, 49, 49, 0.85);margin:0px;padding:0px;position:fixed;z-index:10;">
+<div id="menu">
+<img src="logo_white.png" style="position:absolute;margin-top:-31px;left:35px;width:117px;">
+<span style="margin-left:200px;">WHO WE ARE</span>
+<span>RECRUITMENT</span>
+<span>ARE WE ONLINE?</span>
+</div>
+<img src="logo_white.png" style="position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -400px;
+    width: 800px;
+    margin-top: -250px;
+    opacity: .6;">
+</div>
+<div style="height:100%;width:100%;background-color:rgba(255, 0, 0, 0.83);z-index:10;position:absolute;">
+<div id="polina" style="margin-top:150px;">
+<h1>Trillion</h1>
+<p>7/7 Heroic | Garona
+<p><a href="http://www.wowprogress.com/guild/us/garona/Trillion">WoW-Progress</a>
+<p>Over the years, you may find that rare long-lasting friendships can be made. Here at Trillion, we are comprised of players who have spent years and years of gaming experiences together -- spanning across multiple games and ecosystems coming back together to vanquish the Legion throughout Azeroth.</p>
+<p>New Guilies and Oldies alike, we find character and personality the most important trait for friends and raiders.</p>
+<p>With multiple players with top world-first achievements under the belt, we seek to find the balance between pushing content and maintaining casual gameplay.</p>
+<button>Pause</button>
+</div>
+</div>
+<div style="height:100%;width:100%;background-color:rgba(0, 0, 255, 0.85);top:200%;">
+<div id="polina">
+<h1>Trillion</h1>
+<p>filmed by Alexander Wagner 2011
+<p><a href="http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video">original article</a>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porta dictum turpis, eu mollis justo gravida ac. Proin non eros blandit, rutrum est a, cursus quam. Nam ultricies, velit ac suscipit vehicula, turpis eros sollicitudin lacus, at convallis mauris magna non justo. Etiam et suscipit elit. Morbi eu ornare nulla, sit amet ornare est. Sed vehicula ipsum a mattis dapibus. Etiam volutpat vel enim at auctor.</p>
+<p>Aenean pharetra convallis pellentesque. Vestibulum et metus lectus. Nunc consectetur, ipsum in viverra eleifend, erat erat ultricies felis, at ultricies mi massa eu ligula. Suspendisse in justo dapibus metus sollicitudin ultrices id sed nisl.</p>
+<button>Pause</button>
+</div>
+</div>
+<script>
+// instantiate script on your container
+ $('.valiant').Valiant360({
+        crossOrigin: 'anonymous',   // valid keywords: 'anonymous' or 'use-credentials'
+        clickAndDrag: true,    // use click-and-drag camera controls
+        keyboardControls: true, // use keyboard controls (move by arrows)
+        flatProjection: false,  // map image to appear flat (often more distorted)
+        fov: 10,                // initial field of view
+        fovMin: 3,              // min field of view allowed
+        fovMax: 100,            // max field of view allowed
+        hideControls: true,    // hide player controls
+        lon: 180,                 // initial lon for camera angle
+        lat: 0,                 // initial lat for camera angle
+        loop: "loop",           // video loops by default
+        muted: true,            // video muted by default
+        volume: 0.5,            // video volume by default
+        autoplay: true          // video autoplays by default
+    });
+	
+	$(".valiant").bind("wheel mousewheel", function(e) {e.preventDefault()});
+</script>
+</body>
+</html>
